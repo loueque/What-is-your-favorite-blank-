@@ -47,7 +47,7 @@ def play_game():
     rng_team_two = teams[rng_team_]
     print(f"{rng_team_one} vs {rng_team_two}")
     print("Kickoff!")
-    score_one = rng.randint(0, 0)
+    score_one = rng.randint(0, 70)
     score_two = rng.randint(0, 70)
     print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two}")
     if score_one > score_two:
@@ -56,7 +56,7 @@ def play_game():
         print(f"{rng_team_one} wins!")
     elif score_one < score_two:
         if score_one == 0:
-            print(f"{rng_team_one} had a shutdown against {rng_team_one}!")
+            print(f"{rng_team_two} had a shutout against {rng_team_one}!")
         print(f"{rng_team_two} wins!")
 
 def main():
