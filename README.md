@@ -1,3 +1,3 @@
-# What-is-your-favorite-blank
+# Randomized football teams
 
-Fun, little program where the computer asks you some questions, and response back!
+Fun, small, and a project to access skills of programming, and just to mess around for school friends.
