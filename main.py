@@ -70,8 +70,6 @@ def print_team():
 
     return rng_conf, rng_div
 
-print(print_team())
-
 def play_game():
     # using print_team(), chose out a random team in the conference and division
     conf, div = print_team()
@@ -89,11 +87,11 @@ def play_game():
     print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two}")
     if score_one > score_two:
         if score_two == 0:
-            print(f"{rng_team_two} from {rng_team_conf_two} had a shutdown against {rng_team_one} from {rng_team_conf_one}!")
+            print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
         print(f"{rng_team_one} wins!")
     elif score_one < score_two:
         if score_one == 0:
-            print(f"{rng_team_two} from {rng_team_conf_two} had a shutdown against {rng_team_one} from {rng_team_conf_one}!")
+            print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
         print(f"{rng_team_two} wins!")
 
 def main():
