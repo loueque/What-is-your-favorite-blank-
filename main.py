@@ -40,8 +40,30 @@ teams = {
     "WAS": "Washington Redskins",
 }
 
-def main():
+def play_game():
     rng_team = rng.choice(list(teams.keys()))
-    rng_team_name = teams[rng_team]
-    print(f"{organizer} {rng_team_name}")
-    
+    rng_team_one = teams[rng_team]
+    rng_team_ = rng.choice(list(teams.keys()))
+    rng_team_two = teams[rng_team_]
+    print(f"{rng_team_one} vs {rng_team_two}")
+    print("Kickoff!")
+    score_one = rng.randint(0, 0)
+    score_two = rng.randint(0, 70)
+    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two}")
+    if score_one > score_two:
+        if score_two == 0:
+            print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
+        print(f"{rng_team_one} wins!")
+    elif score_one < score_two:
+        if score_one == 0:
+            print(f"{rng_team_one} had a shutdown against {rng_team_one}!")
+        print(f"{rng_team_two} wins!")
+
+def main():
+    choice = input("Would you like to play a game? (y/n) ")
+    if choice == "y":
+        play_game()
+    else:
+        print("Bye!")
+
+main()
