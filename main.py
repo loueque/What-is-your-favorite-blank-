@@ -85,25 +85,31 @@ def play_game():
 
     quarterone_score_one = rng.randint(0, 17)
     quarterone_score_two = rng.randint(0, 17)
-    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the first quarter.")
+    print(f"{rng_team_one} scored {quarterone_score_one}, and {rng_team_two} scored {quarterone_score_two} in the first quarter.")
+    time.sleep(2)
     quartertwo_score_one = rng.randint(0, 17)
-    quarterthree_score_two = rng.randint(0, 17)
-    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the second quarter.")
+    quartertwo_score_two = rng.randint(0, 17)
+    print(f"{rng_team_one} scored {quartertwo_score_one}, and {rng_team_two} scored {quartertwo_score_two} in the second quarter.")
     print("Halftime!")
+    time.sleep(2)
     quarterthree_score_one = rng.randint(0, 17)
     quarterthree_score_two = rng.randint(0, 17)
-    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the third quarter.")
+    print(f"{rng_team_one} scored {quarterthree_score_one}, and {rng_team_two} scored {quarterthree_score_two} in the third quarter.")
+    time.sleep(2)
     quarterfour_score_one = rng.randint(0, 17)
     quarterfour_score_two = rng.randint(0, 17)
 
-    total = 0
-    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the first quarter.")
-    if score_one > score_two:
-        if score_two == 0:
+    first_total = 0
+    second_total = 0
+    first_total = quarterone_score_one + quartertwo_score_one + quarterthree_score_one + quarterfour_score_one
+    second_total = quarterone_score_two + quartertwo_score_two + quarterthree_score_two + quarterfour_score_two
+    print(f"{rng_team_one} scored {first_total}, and {rng_team_two} scored {second_total}!")
+    if first_total > second_total:
+        if first_total == 0:
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
         print(f"{rng_team_one} wins!")
-    elif score_one < score_two:
-        if score_one == 0:
+    elif first_total < second_total:
+        if first_total == 0:
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
         print(f"{rng_team_two} wins!")
 
