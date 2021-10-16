@@ -1,4 +1,5 @@
 import random as rng
+import time
 
 organizer = "NFL"
 
@@ -82,9 +83,21 @@ def play_game():
     print(f"{rng_team_one} vs. {rng_team_two}")
     print("Kickoff!")
 
-    score_one = rng.randint(0, 52)
-    score_two = rng.randint(0, 52)
-    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two}")
+    quarterone_score_one = rng.randint(0, 17)
+    quarterone_score_two = rng.randint(0, 17)
+    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the first quarter.")
+    quartertwo_score_one = rng.randint(0, 17)
+    quarterthree_score_two = rng.randint(0, 17)
+    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the second quarter.")
+    print("Halftime!")
+    quarterthree_score_one = rng.randint(0, 17)
+    quarterthree_score_two = rng.randint(0, 17)
+    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the third quarter.")
+    quarterfour_score_one = rng.randint(0, 17)
+    quarterfour_score_two = rng.randint(0, 17)
+
+    total = 0
+    print(f"{rng_team_one} scored {score_one}, and {rng_team_two} scored {score_two} in the first quarter.")
     if score_one > score_two:
         if score_two == 0:
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
