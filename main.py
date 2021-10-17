@@ -1,103 +1,115 @@
 import random as rng
 import time
 
-organizer = "NFL"
+class Team:
+    global organizer
+    organizer = "NFL"
 
-divisions = {
-    "AFC": {
-        "North": {
-            "CIN": "Cincinnati Bengals",
-            "CLE": "Cleveland Browns",
-            "PIT": "Pittsburgh Steelers",
-            "BAL": "Baltimore Ravens",
+    divisions = {
+        "AFC": {
+            "North": {
+                "CIN": "Cincinnati Bengals",
+                "CLE": "Cleveland Browns",
+                "PIT": "Pittsburgh Steelers",
+                "BAL": "Baltimore Ravens",
+            },
+
+            "East": {
+                "NE": "New England Patriots",
+                "BUF": "Buffalo Bills",
+                "MIA": "Miami Dolphins",
+                "NYJ": "New York Jets",
+            },
+
+            "South": {
+                "HOU": "Houston Texans",
+                "IND": "Indianapolis Colts",
+                "JAX": "Jacksonville Jaguars",
+                "TEN": "Tennessee Titans",
+            },
+
+            "West": {
+                "LAC": "Los Angeles Chargers",
+                "OAK": "Oakland Raiders",
+                "DEN": "Denver Broncos",
+                "KC": "Kansas City Chiefs",
+            }
         },
 
-        "East": {
-            "NE": "New England Patriots",
-            "BUF": "Buffalo Bills",
-            "MIA": "Miami Dolphins",
-            "NYJ": "New York Jets",
-        },
+        "NFC": {
+            "North": {
+                "GB": "Green Bay Packers",
+                "MIN": "Minnesota Vikings",
+                "DET": "Detroit Lions",
+                "CHI": "Chicago Bears",
+            },
 
-        "South": {
-            "HOU": "Houston Texans",
-            "IND": "Indianapolis Colts",
-            "JAX": "Jacksonville Jaguars",
-            "TEN": "Tennessee Titans",
-        },
+            "East": {
+                "NYG": "New York Giants",
+                "PHI": "Philadelphia Eagles",
+                "WAS": "Washington Redskins",
+                "DAL": "Dallas Cowboys",
+            },
 
-        "West": {
-            "LAC": "Los Angeles Chargers",
-            "OAK": "Oakland Raiders",
-            "DEN": "Denver Broncos",
-            "KC": "Kansas City Chiefs",
+            "South": {
+                "ATL": "Atlanta Falcons",
+                "CAR": "Carolina Panthers",
+                "NO": "New Orleans Saints",
+                "TB": "Tampa Bay Buccaneers",
+            },
+
+            "West": {
+                "ARI": "Arizona Cardinals",
+                "LAR": "Los Angeles Rams",
+                "SF": "San Francisco 49ers",
+                "SEA": "Seattle Seahawks",
+            },
         }
-    },
-
-    "NFC": {
-        "North": {
-            "GB": "Green Bay Packers",
-            "MIN": "Minnesota Vikings",
-            "DET": "Detroit Lions",
-            "CHI": "Chicago Bears",
-        },
-
-        "East": {
-            "NYG": "New York Giants",
-            "PHI": "Philadelphia Eagles",
-            "WAS": "Washington Redskins",
-            "DAL": "Dallas Cowboys",
-        },
-
-        "South": {
-            "ATL": "Atlanta Falcons",
-            "CAR": "Carolina Panthers",
-            "NO": "New Orleans Saints",
-            "TB": "Tampa Bay Buccaneers",
-        },
-
-        "West": {
-            "ARI": "Arizona Cardinals",
-            "LAR": "Los Angeles Rams",
-            "SF": "San Francisco 49ers",
-            "SEA": "Seattle Seahawks",
-        },
     }
-}
 
-def print_team():
-    rng_conf = rng.choice(list(divisions.keys()))
-    rng_div = rng.choice(list(divisions[rng_conf].keys()))
+    def __init__(self):
+        pass
 
-    return rng_conf, rng_div
+    def choose_team(self):
+        rng_conf = rng.choice(list(self.divisions.keys()))
+        rng_div = rng.choice(list(self.divisions[rng_conf].keys()))
+
+        return rng_conf, rng_div
+
+    def setMatch(self, team_one, team_two):
+        self.team_one = team_one
+        self.team_two = team_two
+
+    def getMatch(self):
+        return self.team_one, self.team_two
 
 def play_game():
-    # using print_team(), chose out a random team in the conference and division
-    conf, div = print_team()
-    rng_team_one = rng.choice(list(divisions[conf][div].values()))
-    rng_team_conf_one = rng.choice(list(divisions[conf].values()))
-    rng_team_two = rng.choice(list(divisions[conf][div].values()))
-    rng_team_conf_two = rng.choice(list(divisions[conf].values()))
+    teamClass = Team()
+    conf, div = teamClass.choose_team()
 
-    # print the teams
+    rng_team_one = rng.choice(list(teamClass.divisions[conf][div].values()))
+    rng_team_conf_one = rng.choice(list(teamClass.divisions[conf].values()))
+    rng_team_two = rng.choice(list(teamClass.divisions[conf][div].values()))
+    rng_team_conf_two = rng.choice(list(teamClass.divisions[conf].values()))
+
     print(f"{rng_team_one} vs. {rng_team_two}")
     print("Kickoff!")
 
-    quarterone_score_one = rng.randint(0, 17)
-    quarterone_score_two = rng.randint(0, 17)
+    quarterone_score_one = rng.randint(0, 10)
+    quarterone_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quarterone_score_one}, and {rng_team_two} scored {quarterone_score_two} in the first quarter.")
     time.sleep(2)
-    quartertwo_score_one = rng.randint(0, 17)
-    quartertwo_score_two = rng.randint(0, 17)
+    quartertwo_score_one = rng.randint(0, 10)
+    quartertwo_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quartertwo_score_one}, and {rng_team_two} scored {quartertwo_score_two} in the second quarter.")
     print("Halftime!")
     time.sleep(2)
-    quarterthree_score_one = rng.randint(0, 17)
-    quarterthree_score_two = rng.randint(0, 17)
+    quarterthree_score_one = rng.randint(0, 10)
+    quarterthree_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quarterthree_score_one}, and {rng_team_two} scored {quarterthree_score_two} in the third quarter.")
     time.sleep(2)
-    quarterfour_score_one = rng.randint(0, 17)
-    quarterfour_score_two = rng.randint(0, 17)
+    quarterfour_score_one = rng.randint(0, 10)
+    quarterfour_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quarterfour_score_one}, and {rng_team_two} scored {quarterfour_score_two} in the fourth quarter.")
 
     first_total = 0
