@@ -155,12 +155,14 @@ def play_game():
     teamClass = Team()
     conf, div = teamClass.choose_team()
 
-    rng_team_one = rng.choice(list(teamClass.divisions[conf][div].values()))
+    # rng_team_one = rng.choice(list(teamClass.divisions[conf][div].values()))
     rng_team_conf_one = rng.choice(list(teamClass.divisions[conf].values()))
-    rng_team_two = rng.choice(list(teamClass.divisions[conf][div].values()))
+    rng_team_one = rng.choice(list(rng_team_conf_one))
+    # rng_team_two = rng.choice(list(teamClass.divisions[conf][div].values()))
     rng_team_conf_two = rng.choice(list(teamClass.divisions[conf].values()))
+    rng_team_two = rng.choice(list(rng_team_conf_two))
 
-    print(f"{rng_team_one} in the {rng_team_conf_one} vs. {rng_team_two} in the {rng_team_conf_two}")
+    print(f"{rng_team_one} vs. {rng_team_two}")
     print("Kickoff!")
 
     quarterone_score_one = rng.randint(0, 10)
@@ -170,7 +172,7 @@ def play_game():
     quartertwo_score_one = rng.randint(0, 20)
     quartertwo_score_two = rng.randint(0, 20)
     print(f"{rng_team_one} scored {quartertwo_score_one}, and {rng_team_two} scored {quartertwo_score_two} in the second quarter.")
-    print("\nHalftime!")
+    print("\nHalftime!\n")
     time.sleep(2)
     quarterthree_score_one = rng.randint(0, 10)
     quarterthree_score_two = rng.randint(0, 10)
@@ -184,14 +186,14 @@ def play_game():
     second_total = 0
     first_total = quarterone_score_one + quartertwo_score_one + quarterthree_score_one + quarterfour_score_one
     second_total = quarterone_score_two + quartertwo_score_two + quarterthree_score_two + quarterfour_score_two
-    print(f"{rng_team_one} scored {first_total}, and {rng_team_two} scored {second_total}!")
+    print(f"FINAL: {rng_team_one} scored {first_total}, and {rng_team_two} scored {second_total}!")
     if first_total > second_total:
         if first_total == 0:
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
         print(f"{rng_team_one} wins!")
     elif first_total < second_total:
         if first_total == 0:
-            print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
+            print(f"{rng_team_two} had a shutdown against {rng_team_one}!\n")
         print("\n"f"{rng_team_two} wins!")
 
 def main():
