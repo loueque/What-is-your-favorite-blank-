@@ -170,7 +170,7 @@ def play_game():
     quartertwo_score_one = rng.randint(0, 20)
     quartertwo_score_two = rng.randint(0, 20)
     print(f"{rng_team_one} scored {quartertwo_score_one}, and {rng_team_two} scored {quartertwo_score_two} in the second quarter.")
-    print("Halftime!")
+    print("\nHalftime!")
     time.sleep(2)
     quarterthree_score_one = rng.randint(0, 10)
     quarterthree_score_two = rng.randint(0, 10)
@@ -192,7 +192,7 @@ def play_game():
     elif first_total < second_total:
         if first_total == 0:
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!")
-        print(f"{rng_team_two} wins!")
+        print("\n"f"{rng_team_two} wins!")
 
 def main():
     choice = input("Would you like to play a game? (y/n)\n")
