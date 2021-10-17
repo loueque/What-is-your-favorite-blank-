@@ -5,6 +5,74 @@ class Team:
     global organizer
     organizer = "NFL"
 
+    new_divisions = {
+        "AFC": {
+            "Cincinnati Bengals": {
+                "Division" == "North",
+            },
+
+            "Cleveland Browns": {
+                "Division" == "North",
+            },
+
+            "Pittsburgh Steelers": {
+                "Division" == "North",
+            },
+
+            "Baltimore Ravens": {
+                "Division" == "North",
+            },
+
+            "Houston Texans": {
+                "Division" == "South",
+            },
+
+            "Indianapolis Colts": {
+                "Division" == "South",
+            },
+
+            "Jacksonville Jaguars": {
+                "Division" == "South",
+            },
+
+            "Tennessee Titans": {
+                "Division" == "South"
+            },
+
+             "New York Jets": {
+                "Division" == "East",
+            },
+
+            "Cleveland Browns": {
+                "Division" == "East",
+            },
+
+            "Pittsburgh Steelers": {
+                "Division" == "East",
+            },
+
+            "Baltimore Ravens": {
+                "Division" == "East",
+            },
+
+            "Houston Texans": {
+                "Division" == "West",
+            },
+
+            "Indianapolis Colts": {
+                "Division" == "West",
+            },
+
+            "Jacksonville Jaguars": {
+                "Division" == "West",
+            },
+
+            "Tennessee Titans": {
+                "Division" == "West"
+            }
+        }
+    },
+
     divisions = {
         "AFC": {
             "North": {
@@ -92,15 +160,15 @@ def play_game():
     rng_team_two = rng.choice(list(teamClass.divisions[conf][div].values()))
     rng_team_conf_two = rng.choice(list(teamClass.divisions[conf].values()))
 
-    print(f"{rng_team_one} vs. {rng_team_two}")
+    print(f"{rng_team_one} in the {rng_team_conf_one} vs. {rng_team_two} in the {rng_team_conf_two}")
     print("Kickoff!")
 
     quarterone_score_one = rng.randint(0, 10)
     quarterone_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quarterone_score_one}, and {rng_team_two} scored {quarterone_score_two} in the first quarter.")
     time.sleep(2)
-    quartertwo_score_one = rng.randint(0, 10)
-    quartertwo_score_two = rng.randint(0, 10)
+    quartertwo_score_one = rng.randint(0, 20)
+    quartertwo_score_two = rng.randint(0, 20)
     print(f"{rng_team_one} scored {quartertwo_score_one}, and {rng_team_two} scored {quartertwo_score_two} in the second quarter.")
     print("Halftime!")
     time.sleep(2)
@@ -108,8 +176,8 @@ def play_game():
     quarterthree_score_two = rng.randint(0, 10)
     print(f"{rng_team_one} scored {quarterthree_score_one}, and {rng_team_two} scored {quarterthree_score_two} in the third quarter.")
     time.sleep(2)
-    quarterfour_score_one = rng.randint(0, 10)
-    quarterfour_score_two = rng.randint(0, 10)
+    quarterfour_score_one = rng.randint(0, 20)
+    quarterfour_score_two = rng.randint(0, 20)
     print(f"{rng_team_one} scored {quarterfour_score_one}, and {rng_team_two} scored {quarterfour_score_two} in the fourth quarter.")
 
     first_total = 0
