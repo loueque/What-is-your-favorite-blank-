@@ -98,6 +98,7 @@ def play_game():
     time.sleep(2)
     quarterfour_score_one = rng.randint(0, 17)
     quarterfour_score_two = rng.randint(0, 17)
+    print(f"{rng_team_one} scored {quarterfour_score_one}, and {rng_team_two} scored {quarterfour_score_two} in the fourth quarter.")
 
     first_total = 0
     second_total = 0
@@ -114,7 +115,7 @@ def play_game():
         print(f"{rng_team_two} wins!")
 
 def main():
-    choice = input("Would you like to play a game? (y/n) ")
+    choice = input("Would you like to play a game? (y/n)\n")
     if choice == "y":
         play_game()
     else:
