@@ -128,10 +128,25 @@ def play_game():
             print(f"{rng_team_two} had a shutdown against {rng_team_one}!\n")
         print("\n"f"{rng_team_two} wins!")
 
+def play_randomized_game():
+    teamClass = Team()
+    conf, div = teamClass.choose_team()
+
+    rng_team_conf_one = rng.choice(list(teamClass.divisions[conf].values()))
+    rng_team_one = rng.choice(list(rng_team_conf_one))
+    rng_team_conf_two = rng.choice(list(teamClass.divisions[conf].values()))
+    rng_team_two = rng.choice(list(rng_team_conf_two))
+
+    print(f"{rng_team_one} vs. {rng_team_two}")
+
 def main():
     choice = input("Would you like to play a game? (y/n)\n")
     if choice == "y":
-        play_game()
+        type_of_game = input("Would you like a randomized team, or randomized game? (r/g)\n")
+        if type_of_game == "r":
+            play_randomized_game()
+        elif type_of_game == "g":
+            play_game()
     else:
         print("Bye!")
 
