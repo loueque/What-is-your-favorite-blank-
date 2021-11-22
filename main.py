@@ -87,10 +87,8 @@ def play_game():
     teamClass = Team()
     conf, div = teamClass.choose_team()
 
-    # rng_team_one = rng.choice(list(teamClass.divisions[conf][div].values()))
     rng_team_conf_one = rng.choice(list(teamClass.divisions[conf].values()))
     rng_team_one = rng.choice(list(rng_team_conf_one))
-    # rng_team_two = rng.choice(list(teamClass.divisions[conf][div].values()))
     rng_team_conf_two = rng.choice(list(teamClass.divisions[conf].values()))
     rng_team_two = rng.choice(list(rng_team_conf_two))
 
@@ -113,6 +111,7 @@ def play_game():
     quarterfour_score_one = rng.randint(0, 20)
     quarterfour_score_two = rng.randint(0, 20)
     print(f"{rng_team_one} scored {quarterfour_score_one}, and {rng_team_two} scored {quarterfour_score_two} in the fourth quarter.")
+    time.sleep(2)
 
     first_total = 0
     second_total = 0
