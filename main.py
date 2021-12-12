@@ -148,6 +148,7 @@ def play_randomized_game():
 def play_ugc_game(teamOne, teamTwo):
     print(f"{teamOne} vs. {teamTwo}")
     teamClass = Team()
+    print(organizer)
     one, two = teamClass.find_team(teamOne), teamClass.find_team(teamTwo)
     print(f"{one} vs. {two}")
     print("Kickoff!")
