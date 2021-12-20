@@ -160,6 +160,7 @@ def play_ugc_game(teamOne, teamTwo):
     quartertwo_score_one = rng.randint(0, 20)
     quartertwo_score_two = rng.randint(0, 20)
     print(f"{one} scored {quartertwo_score_one}, and {two} scored {quartertwo_score_two} in the second quarter.")
+    time.sleep(2)
     print("\nHalftime!\n")
     time.sleep(2)
     quarterthree_score_one = rng.randint(0, 10)
@@ -184,7 +185,7 @@ def play_ugc_game(teamOne, teamTwo):
         print(f"{two} wins!")
 
 def main():
-    choice = input("Would you like to play a game? (y/n)\n")
+    choice = input("Would you like to play a NFL match? (y/n)\n")
     if choice == "y":
         type_of_game = input("Would you like a randomized team, randomized game, or choose your own teams? (r/g/c)\n")
         if type_of_game == "r":
@@ -195,7 +196,5 @@ def main():
             team_one = input("What first team would you like to play?\n")
             team_two = input("What second team would you like to play?\n")
             play_ugc_game(team_one, team_two)
-    else:
-        print("Bye!")
 
 main()
